@@ -13,11 +13,11 @@
     <button class="addBtn">Add Your Book</button>
     <div class="container"></div>
     <div class="modal">
-        <div class="modalContent">
+        <form class="modalContent">
             <h1>Add Your Book</h1>
-            <input type="text" class="flexChild author" placeholder="Book Author">
-            <input type="text" class="flexChild title" placeholder="Title">
-            <input type="number" class="flexChild pages" placeholder="Number Of Pages">
+            <input type="text" class="flexChild author" placeholder="Book Author" required>
+            <input type="text" class="flexChild title" placeholder="Title" required>
+            <input type="number" class="flexChild pages" placeholder="Number Of Pages" required>
             <div class="readStat">
                 <input type="checkbox" class="read" >
                 <span class="check">Have You Read This Book ?
@@ -27,7 +27,7 @@
                 <button class="modalButton closeModal">close</button>
                 <button class="modalButton submit" > add book</button>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>
