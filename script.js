@@ -17,11 +17,13 @@ add.addEventListener('click', () => {modal.style.display='block';})
 //closes modal
 closeModal.addEventListener('click', () => {modal.style.display='none'; clear();})
 //constructor
-function book(author, title, pages, read) {
-    this.author=author
-    this.title=title
-    this.pages=pages
-    this.read=read
+class book{
+    constructor(author, title, pages, read) {
+        this.author=author
+        this.title=title
+        this.pages=pages
+        this.read=read
+    }
 }
 function createBook(){
     let tempAuthor = author.value;
