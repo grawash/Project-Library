@@ -5,6 +5,7 @@ let pages = document.querySelector(".pages")
 let read = document.querySelector(".read")
 let submit = document.querySelector(".submit")
 let closeModal = document.querySelector(".closeModal")
+let allInputs = document.querySelectorAll("input");
 //main content
 let body = document.querySelector("body")
 let container = document.querySelector(".container")
@@ -111,7 +112,34 @@ function clear(){
 function validate(){
     if(author.value ==="" || title.value === "" || pages.value === ""){return false}
     else{return true}
-}
 
+}
+submit.addEventListener("click", function (event) {
+    if (author.validity.valueMissing) {
+        author.setCustomValidity("Please enter name of the author. ");
+        author.classList.add("error");
+        title.setCustomValidity("");
+        pages.setCustomValidity("");
+    } else if(title.validity.valueMissing){
+        pages.setCustomValidity("");
+        author.setCustomValidity("");
+        title.setCustomValidity("Please enter name of the book. ");
+        title.classList.add("error");
+    } else if(pages.validity.valueMissing){
+        author.setCustomValidity("");
+        title.setCustomValidity("");
+        pages.setCustomValidity("Please enter number of pages. ");
+        pages.classList.add("error");
+
+    }else{
+        author.setCustomValidity("");
+        title.setCustomValidity("");
+        pages.setCustomValidity("");
+    }
+  });
+  allInputs.forEach(element => element.addEventListener("input", function(event){
+    element.setCustomValidity("");
+    element.classList.remove("error");
+  }));
 //submit book info
 submit.addEventListener('click', () =>  {if(validate()==true){createBook();  displayBook(); clear();  modal.style.display='none';}});
