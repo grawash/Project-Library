@@ -150,3 +150,7 @@ button:hover{
 opacity: 0.5;
 cursor: pointer;
 }
+input.error{
+    border:3px solid red;
+    background-color: rgba(141, 68, 68, 0.836);
+}
